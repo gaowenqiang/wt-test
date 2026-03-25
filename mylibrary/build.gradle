@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.wtkj.mylibrary'
     compileSdk {
         version = release(29)
     }
