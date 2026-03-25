@@ -52,7 +52,7 @@ publishing {
 
 dependencies {
     implementation libs.appcompat
-    implementation libs.material
+    api libs.material
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
