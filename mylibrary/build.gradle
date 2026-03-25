@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.wtkj.mylibrary'
-    compileSdk {
-        version = release(29)
-    }
+    compileSdkVersion 34
+
 
     defaultConfig {
-        minSdk 21
+        minSdkVersion 19
+        targetSdkVersion 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
