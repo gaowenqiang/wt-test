@@ -5,7 +5,7 @@ plugins {
 android {
     namespace 'com.wtkj.mylibrary'
     compileSdk {
-        version = release(29)
+        version = release(36)
     }
 
     defaultConfig {
