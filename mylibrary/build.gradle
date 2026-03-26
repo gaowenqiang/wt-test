@@ -51,6 +51,8 @@ publishing {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation libs.appcompat
     api libs.material
     testImplementation libs.junit
