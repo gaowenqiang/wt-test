@@ -1,10 +1,16 @@
-plugins {
-    alias(libs.plugins.android.library)
-    id 'maven-publish'   // 添加这一行
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'maven-publish'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
 }
 
 android {
-    namespace 'com.wtkj.mylibrary'
     compileSdkVersion 34
 
 
@@ -28,12 +34,12 @@ android {
     }
 
     // 确保生成 sources jar（可选，但推荐）
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            // withJavadocJar()  // 如果有文档注释可以开启
-        }
-    }
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//            // withJavadocJar()  // 如果有文档注释可以开启
+//        }
+//    }
 }
 
 publishing {
@@ -53,9 +59,11 @@ publishing {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation libs.appcompat
-    api libs.material
-    testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "com.google.android.material:material:$materialVersion"
+
 }
